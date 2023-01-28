@@ -8,7 +8,7 @@ from rest_framework.decorators import api_view,renderer_classes,authentication_c
 from.serializers import itemsserializer
 from .models import item
 
-@api_view(['GET'])
+@api_view(['GET','POST'])
 @renderer_classes([TemplateHTMLRenderer])
 def login_info(request):
     return Response(template_name='login.html')
@@ -33,7 +33,4 @@ def get_product_by_category_id(request,pk=None):
     scr_data=itemsserializer(item.objects.filter(categoryID=pk),many=True)
     data={"data":scr_data.data}
     return Response(data=data)
-@api_view(['GET'])
-def user_to_home(request):
-    return render(request,'index.html')
     

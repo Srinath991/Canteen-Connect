@@ -12,11 +12,21 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    wsydsfzbxhfedvbc
 """
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.core.mail import send_mail
+'''
+send_mail(
+    subject='Subject here',
+    message='Here is the message.',
+    from_email='991techsri@gmail.com',
+    recipient_list=['satishsatish8078@gmail.com'],
+    fail_silently=False,
+)'''
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('items.urls')),
