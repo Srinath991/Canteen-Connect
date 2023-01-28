@@ -3,7 +3,7 @@ from .views import (get_product_by_category_id,
 list_all_products,
 login_info,
 register,
-user_to_home
+user_to_home,
 )
 urlpatterns=[
     path('',login_info,name='login'),

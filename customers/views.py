@@ -14,7 +14,7 @@ def login_details(request):
                 data=Customer.objects.get(email=email)
                 json_data=CustomerSerializer(data).data
                 if(json_data['password']==password):
-                    return redirect('home')
+                    return redirect('confirm')
                 else:
                     return redirect('login')
            except:
@@ -23,3 +23,5 @@ def login_details(request):
             return redirect('login')
     except:
         return redirect('login')
+def confirm_otp(request):
+    return render(request,'otp.html')
