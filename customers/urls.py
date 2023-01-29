@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import *
-from .views import login_details,confirm_otp
+from .views import login_details
 urlpatterns=[
-    path('user/login/',login_details),
-    path("confirm/",confirm_otp,name='confirm'),
+    path('user/login/',login_details,name='login_details'),
 ]

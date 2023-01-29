@@ -1,9 +1,11 @@
 from django.shortcuts import render,redirect
 # Create your views here.
-from django.http import HttpResponse
 from.models import Customer
 from .serializers import CustomerSerializer
 from rest_framework.decorators import api_view
+from random import randint
+import smtplib
+otp=''
 api_view(['POST'])
 def login_details(request):
     try:
@@ -14,7 +16,7 @@ def login_details(request):
                 data=Customer.objects.get(email=email)
                 json_data=CustomerSerializer(data).data
                 if(json_data['password']==password):
-                    return redirect('confirm')
+                    return render(request,'index.html')
                 else:
                     return redirect('login')
            except:
@@ -23,5 +25,3 @@ def login_details(request):
             return redirect('login')
     except:
         return redirect('login')
-def confirm_otp(request):
-    return render(request,'otp.html')
