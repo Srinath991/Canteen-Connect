@@ -13,10 +13,6 @@ from .models import item
 def login_info(request):
     return Response(template_name='login.html')
 @api_view(['GET'])
-@renderer_classes([TemplateHTMLRenderer])
-def register(request):
-    return Response(template_name='register.html')
-@api_view(['GET'])
 @renderer_classes([JSONRenderer])
 @authentication_classes([BasicAuthentication])
 @permission_classes([IsAuthenticated])

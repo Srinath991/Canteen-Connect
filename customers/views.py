@@ -3,9 +3,8 @@ from django.shortcuts import render,redirect
 from.models import Customer
 from .serializers import CustomerSerializer
 from rest_framework.decorators import api_view
-from random import randint
-import smtplib
-otp=''
+from rest_framework.response import Response
+from .email import email_to_user
 api_view(['POST'])
 def login_details(request):
     try:
@@ -25,3 +24,28 @@ def login_details(request):
             return redirect('login')
     except:
         return redirect('login')
+@api_view(['GET'])
+def register(request):
+    if request.method=="GET":
+        return render(request,'register.html')
+@api_view(['POST'])
+def otp_validation(request):
+    thrd=email_to_user('srinathvsrinathv863@gmail.com')
+    thrd.start()
+    try:
+        email=request.POST['email']
+        pass1=request.POST['pass1']
+        pass2=request.POST['pass2']
+        if pass1==pass2:
+            try:
+                Customer.objects.get({'email':email})
+                return redirect('login')
+            except:
+                email_to_user(email)
+                return redirect('otp')
+
+        else:
+            return render(request,'register.html')
+        
+    except:
+        return render(request,'register.html')

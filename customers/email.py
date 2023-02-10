@@ -1,19 +1,22 @@
-import smtplib
-
-# creates SMTP session
-s = smtplib.SMTP('smtp.gmail.com', 587)
-
-# start TLS for security
-s.starttls()
-
-# Authentication
-s.login("991techsri@gmail.com", "zyuqyaghmnneezra")
-
-# message to be sent
-message = "Message_you_need_to_send"
-
-# sending the mail
-s.sendmail("991techsri@gmail.com", "srinath2003128991gmail", message)
-
-# terminating the session
-s.quit()
+from django.core.mail import send_mail
+from random import randint
+from threading import Thread
+otp=''
+class email_to_user(Thread):
+    def __init__(self,email) -> None:
+        super().__init__()
+        self.email=email
+    def send(self):
+        global otp
+        for i in range(5):
+            otp+=str(randint(0,9))
+        send_mail(
+        subject='991 TECH SRI',
+        message=f"Registration verification code {otp}\n ",
+        from_email='991techsri@gmail.com',
+        recipient_list=(self.email,),
+        fail_silently=False,)
+        otp=''
+        print('email send successfully')
+    def run(self):
+        self.send()
