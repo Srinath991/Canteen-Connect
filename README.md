@@ -1,8 +1,5 @@
 # Canteen Ordering System Built Using Django.
 
-![Made with love in India](https://madewithlove.now.sh/in?heart=true&colorA=%232543d4&colorB=%23f58f00&template=for-the-badge)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ## About Project 📄
 This Canteen Ordering System is Built Using Django, where students can order the food from their college canteen.
@@ -17,7 +14,6 @@ This Canteen Ordering System is Built Using Django, where students can order the
   - View List of Added Items in Cart Page.
   - Can `Increase/Decrease/Delete Item` from Cart Page.
   - `Place Order` By selecting Payment Mode(Online/Cash).
-  - Payment `Integration of Paypal`.
   - `View List of All Placed Orders` at Orders Page.
   - View `Current Status of Order`.
   - Check `Details of Each Order by clicking View Details Button`.
@@ -38,10 +34,6 @@ Business-End means the Canteen Owner. As of now there is no separate application
 
 So Canteen Owners are provided with the Default `Admin Panel that is Provided by Django`.
 
-## Demo Of Application
-To Watch the Live Demo Of Application click on the Below Given Link.
-[View Demo](https://www.linkedin.com/posts/chinmayagrawal775_python-developer-project-activity-7052944560292831232-M1jI/) 🚀.
-
 ### Here Are Some ScreenShots of The Application
 
 <img src="https://user-images.githubusercontent.com/62383314/210779279-403b0686-d49c-4c70-afab-e2fabc0b45d0.png" alt="drawing" width="49%"></img>
@@ -58,15 +50,3 @@ To Watch the Live Demo Of Application click on the Below Given Link.
 <img src="https://user-images.githubusercontent.com/62383314/210779274-0c8cbf63-fde1-45fa-ae83-1676ca62eb54.png" alt="drawing" width="49%"></img>
 <img src="https://user-images.githubusercontent.com/62383314/210779276-65054df6-b283-497a-aea2-cf7cb6c939fe.png" alt="drawing" width="49%"></img>
 
-## Note
-If You are Learner, or Want to test this application. Then After Forking & Cloning, You Can use these `Test Credentials` for Logging-In into the Application.
-
-``` PYTHON
-- #### FOR USER:
-  - ID : test
-  - PASSWORD : test
-
-- #### FOR ADMIN:
-  - ID : admin
-  - PASSWORD : admin
-```
